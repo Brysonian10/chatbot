@@ -1,4 +1,5 @@
 package model;
+import java.util.ArrayLists;
 
 public class chatModel
 {
@@ -36,7 +37,7 @@ public class chatModel
 		
 	}
 	
-	//----GETTERS------
+	//------GETTERS------
 	
 	public String getResponseList()
 	{
