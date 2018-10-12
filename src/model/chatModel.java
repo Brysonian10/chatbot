@@ -1,5 +1,6 @@
 package model;
-import java.util.ArrayLists;
+import java.util.ArrayList;
+
 
 public class chatModel
 {
