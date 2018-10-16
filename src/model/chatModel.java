@@ -30,6 +30,9 @@ public class chatModel
 		responseList.add("Goodbye - no more talking!");
 		responseList.add("That's pretty neat, do you like jello?");
 		
+		spookyList.add("Do you like to eat worms?");
+		spookyList.add("I like to talk to ghosts, do you like to talk to the supernatural?");
+		
 	}
 	
 	private void content()
@@ -65,7 +68,7 @@ public class chatModel
 	
 	//------GETTERS------
 	
-	public ArrayList getResponseList()
+	public ArrayList<String> getResponseList()
 	{
 		
 		return responseList;
@@ -83,7 +86,7 @@ public class chatModel
 		return joke;
 	}
 	
-	public ArrayList getSpookyList()
+	public ArrayList<String> getSpookyList()
 	{
 		
 		return spookyList;
@@ -108,7 +111,7 @@ public class chatModel
 	
 	//------SETTERS-------
 	
-	public void setResponseList(ArrayList responseList)
+	public void setResponseList(ArrayList<String> responseList)
 	{
 		this.responseList = responseList;
 	}
@@ -128,7 +131,7 @@ public class chatModel
 		this.joke = joke;
 	}
 	
-	public void setSpookyList(ArrayList spookyList)
+	public void setSpookyList(ArrayList<String> spookyList)
 	{
 		this.spookyList = spookyList;
 	}
