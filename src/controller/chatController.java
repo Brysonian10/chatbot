@@ -5,6 +5,18 @@ import javax.swing.JOptionPane;
 
 public class chatController
 {
+	private chatModel simpleBot;
+	
+	private void simpleBot()
+	{
+		
+	}
+	
+	public chatController()
+	{
+		simpleBot = new chatModel();
+	}
+		
 	public void start()
 	{
 		String answer = JOptionPane.showInputDialog(null, "Hello.");
@@ -17,10 +29,11 @@ public class chatController
 		
 	}
 	
-	private void simpleBot()
-	{
+	
+	
+	
 		
-	}
+	
 	
 	public void getter()
 	{

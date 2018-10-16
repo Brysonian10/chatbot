@@ -7,11 +7,36 @@ public class chatModel
 	public String chatBot;
 	private String currentUser;
 	private String joke;
-	private String responseList;
-	private String spookyList;
+	private ArrayList <String> responseList;
+	private ArrayList <String> spookyList;
 	public String askName;
+	public String content;
 	
 	
+	public chatModel()
+	{
+		joke = "Why did the monkey cross the road? It was stapled to the chicken";
+		this.currentUser = new String("default user - boring!!!!");
+		this.content = new String("empty of all content but not null");
+		
+		this.responseList = new ArrayList<String>();
+		this.spookyList = new ArrayList<String>();
+		
+	}
+	
+	private void buildTheLists()
+	{
+		responseList.add("Hello! How are you today?");
+		responseList.add("Goodbye - no more talking!");
+		responseList.add("That's pretty neat, do you like jello?");
+		
+	}
+	
+	private void content()
+	{
+		
+		
+	}
 	
 	private void responseList()
 	{
@@ -40,7 +65,7 @@ public class chatModel
 	
 	//------GETTERS------
 	
-	public String getResponseList()
+	public ArrayList getResponseList()
 	{
 		
 		return responseList;
@@ -58,10 +83,15 @@ public class chatModel
 		return joke;
 	}
 	
-	public String getSpookyList()
+	public ArrayList getSpookyList()
 	{
 		
 		return spookyList;
+	}
+	
+	public String getContent()
+	{
+		return content;
 	}
 	
 	public String getChatBot()
@@ -78,9 +108,14 @@ public class chatModel
 	
 	//------SETTERS-------
 	
-	public void setResponseList(String responseList)
+	public void setResponseList(ArrayList responseList)
 	{
 		this.responseList = responseList;
+	}
+	
+	public void setContent(String content)
+	{
+		this.content = content;
 	}
 	
 	public void setCurrentUser(String currentUser)
@@ -93,7 +128,7 @@ public class chatModel
 		this.joke = joke;
 	}
 	
-	public void setSpookyList(String spookyList)
+	public void setSpookyList(ArrayList spookyList)
 	{
 		this.spookyList = spookyList;
 	}
@@ -108,12 +143,8 @@ public class chatModel
 		this.askName = askName;
 	}
 	
-	public chatModel()
-	{
-		
-	}
 	
-	public chatModel(String responseList, String currentUser, String joke, String spookyList, String chatBot, String askName)
+	public chatModel(ArrayList responseList, String currentUser, String joke, ArrayList spookyList, String chatBot, String askName)
 	{
 		this.responseList = responseList;
 		this.currentUser = currentUser;
