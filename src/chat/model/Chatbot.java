@@ -1,8 +1,8 @@
-package model;
+package chat.model;
 import java.util.ArrayList;
 
 
-public class chatModel
+public class Chatbot
 {
 	public String chatBot;
 	private String currentUser;
@@ -13,7 +13,7 @@ public class chatModel
 	public String content;
 	
 	
-	public chatModel()
+	public Chatbot()
 	{
 		joke = "Why did the monkey cross the road? It was stapled to the chicken";
 		this.currentUser = new String("default user - boring!!!!");
@@ -35,6 +35,16 @@ public class chatModel
 		
 	}
 	
+	public String processText(String userText)
+	{
+		String output = "";
+		
+		output += "You said: " + userText;
+		
+		return output;
+	}
+	
+
 	private void content()
 	{
 		
@@ -147,7 +157,7 @@ public class chatModel
 	}
 	
 	
-	public chatModel(ArrayList responseList, String currentUser, String joke, ArrayList spookyList, String chatBot, String askName)
+	public Chatbot(ArrayList responseList, String currentUser, String joke, ArrayList spookyList, String chatBot, String askName)
 	{
 		this.responseList = responseList;
 		this.currentUser = currentUser;
