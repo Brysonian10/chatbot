@@ -49,5 +49,10 @@ public class ControllerTest
 	{
 		assertNotNull("Chatbot data member not initialized", testController.getChatbot());
 	}
-
+	
+	public boolean chatController(String)
+	{
+		
+		
+	}
 }
