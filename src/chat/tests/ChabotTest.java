@@ -11,6 +11,7 @@ import chat.model.Chatbot;
 public class ChabotTest
 {
 	private Chatbot testedBot;
+	
 
 	@Before
 	public void setUp() throws Exception

@@ -56,5 +56,27 @@ public class ChatController
 	{
 		
 	}
+	
+	public boolean useChatbotCheckers(String spooky)
+	{
+		boolean halloween = true;
+		
+		return halloween;
+		
+		
+	}
+	
+	public String useChatbotCheckers(String text)
+	{
+		String text = "";
+		return text;
+	}
+	
+	public boolean contentChecker (String text)
+	{
+		boolean content = true;
+		
+		return content;
+	}
 			
 }
