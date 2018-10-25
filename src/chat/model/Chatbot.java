@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class Chatbot
 {
+	//data members
 	public String chatBot;
 	private String currentUser;
 	private String joke;
@@ -13,15 +14,16 @@ public class Chatbot
 	public String content;
 	
 	
-	public Chatbot()
+	public Chatbot(String currentUser, String joke, ArrayList<String> responseList, ArrayList<String> spookyList, String askName, String content)
 	{
-		joke = "Why did the monkey cross the road? It was stapled to the chicken";
-		this.currentUser = new String("default user - boring!!!!");
-		this.content = new String("empty of all content but not null");
+		this.currentUser = currentUser;
+		this.joke = joke;
+		this.content = content;
+		this.responseList = responseList;
+		this.spookyList = spookyList;
+		this.askName = askName;
 		
-		this.responseList = new ArrayList<String>();
-		this.spookyList = new ArrayList<String>();
-		
+		buildTheLists();
 	}
 	
 	private void buildTheLists()
@@ -171,7 +173,7 @@ public class Chatbot
 	}
 	
 	
-	public Chatbot(ArrayList responseList, String currentUser, String joke, ArrayList spookyList, String chatBot, String askName)
+	public Chatbot(ArrayList<String> responseList, String currentUser, String joke, ArrayList<String> spookyList, String chatBot, String askName)
 	{
 		this.responseList = responseList;
 		this.currentUser = currentUser;
@@ -180,6 +182,39 @@ public class Chatbot
 		this.chatBot = chatBot;
 		this.askName = askName;
 	}
+	
+	
+	public Chatbot(String userJoke, String userContent, String userCurrent, ArrayList<String> firstList, ArrayList<String> firstSpooky)
+	{
+		// TODO Auto-generated constructor stub
+	}
+
+	public boolean legitimacyChecker(String input)
+	{
+		boolean isValid = true;
+		
+		if(input == null)
+		{
+			isValid = false;
+		}
+		else if(input.equals(""))	
+		{
+			isValid = false;
+		}
+		else if(input.equals("asdfghjkl"))	
+		{
+			isValid = false;
+		}
+		else if(input.length() > 1)
+		{
+			isValid = true;
+		}
+		
+		
+		return isValid;
+		
+	}
+	
 	
 
 }

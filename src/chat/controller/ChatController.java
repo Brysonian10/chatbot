@@ -1,82 +1,71 @@
 package chat.controller;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
-
 import chat.model.Chatbot;
 
 public class ChatController
 {
 	private Chatbot simpleBot;
 	
-	private void simpleBot()
-	{
-		
-	}
+	private String userJoke;
+	private String userContent;
+	private String userCurrent;
+	private ArrayList<String> firstList = new ArrayList<String>();
+	private ArrayList<String> firstSpooky = new ArrayList<String>();
+	
 	
 	public ChatController()
 	{
-		simpleBot = new Chatbot();
+		simpleBot = new Chatbot(userJoke, userContent, userCurrent, firstList, firstSpooky);
 	}
 		
 	public void start()
 	{
-		String userInput = "";
+		//method calls
+		interactWithChatBot("");
 		
-		while(!userInput.equalsIgnoreCase("quit"))
+		//exit loop
+		String keepChatting =JOptionPane.showInputDialog(null, "Do you wat to continue chattiing?");
+		if (keepChatting.equals("yes")) 
 		{
-			userInput = interactWithChatbot(userInput);
-		}	
+			interactWithChatBot("");
+		}else if (keepChatting.equals("no"))
+		{
+			String userInput = " ";
+			while(!userInput.equalsIgnoreCase("quit")) 
+			{
+				userInput = JOptionPane.showInputDialog(null, "type 'quit' to exit ");
+			}
+			
+		}
 		
 	}
 	
-	public String interactWithChatbot(String text)
+	public void interactWithChatBot(String chatBotSays)
 		{
-			String userInput = JOptionPane.showInputDialog(null, "Hi! what do you want to talk about?");
-			userInput = simpleBot.processText(userInput);
-			return userInput;
+			String currentUser = JOptionPane.showInputDialog(null, "Hi! What's your name?");
+			simpleBot.setCurrentUser(currentUser);
+			JOptionPane.showMessageDialog(null, simpleBot.processText(currentUser));
 		}
 		
 	
-	
-		
-	
-	
-	public void getter()
-	{
-		
-	}
-	
-	public void setter()
-	{
-		
-		
-	}
 	
 	public void interactiveWithChatBot()
 	{
 		
 	}
 	
-	public boolean useChatbotCheckers(String spooky)
+	public String useChatbotCheckers(String spooky)
 	{
-		boolean halloween = true;
 		
-		return halloween;
-		
-		
+		return spooky;
+			
 	}
 	
-	public String useChatbotCheckers(String text)
-	{
-		String text = "";
-		return text;
-	}
 	
-	public boolean contentChecker (String text)
+	public Chatbot getChatbot()
 	{
-		boolean content = true;
-		
-		return content;
+		return simpleBot;
 	}
 			
 }
