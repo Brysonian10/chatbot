@@ -49,6 +49,15 @@ public class Chatbot
 		spookyList.add("Halloween");
 		spookyList.add("I like to talk to ghosts, do you like to talk to the supernatural?");
 		spookyList.add("Do you like to eat worms?");
+		spookyList.add("31 Oct == 25 Dec");
+		spookyList.add("THIS IS HALLOWEEN");
+		spookyList.add("I am so spooky");
+		spookyList.add("I'm kind of weird because I actually like AlmondJoys");
+		spookyList.add("Halloween is the best holiday ever");
+		spookyList.add("Why do people like Christmas more than halloween?");
+		spookyList.add("What are you doing on Halloween night?");
+		spookyList.add("I wonder what monsters do on halloween night");
+		spookyList.add("What is your favorite candy?");
 	}
 	
 	public String processText(String userText)
@@ -215,6 +224,29 @@ public class Chatbot
 		
 	}
 	
+	//this is the method for spookyChecker. Basically if what the user says has halloween in it, then its a spooky phrase or something like that.
+	public boolean spookyChecker(String input)
+
+	{
+		boolean isSpooky = false;
+		if(input.contains("Halloween"))
+		{
+			isSpooky = true;
+		}
+		for(String phrase: spookyList)
+		{
+			if(input.contains (phrase))
+			{
+				isSpooky = true;			}
+		}
+		if(input.contains("Easter"))
+		{
+			isSpooky = false;
+		}
+			
+		
+		return isSpooky;
+	}
 	
 
 }
