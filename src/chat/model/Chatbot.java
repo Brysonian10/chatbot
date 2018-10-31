@@ -13,18 +13,25 @@ public class Chatbot
 	public String askName;
 	public String content;
 	
-	
-	public Chatbot(String currentUser, String joke, ArrayList<String> responseList, ArrayList<String> spookyList, String askName, String content)
+	public Chatbot()
 	{
-		this.currentUser = currentUser;
-		this.joke = joke;
-		this.content = content;
-		this.responseList = responseList;
-		this.spookyList = spookyList;
-		this.askName = askName;
+		
+	}
+	
+	
+	public Chatbot()
+	{
+		this.currentUser = "User";
+		this.joke = "Why did the chicken cross the road, I don't know, that's why I'm asking you.";
+		this.content = "random content";
+		this.responseList = new ArrayList<String>();
+		this.spookyList = new ArrayList<String>();
+		this.askName = "What is your name?";
 		
 		buildTheLists();
 	}
+	
+	
 	
 	private void buildTheLists()
 	{
