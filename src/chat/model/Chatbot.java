@@ -19,7 +19,7 @@ public class Chatbot
 	}
 	
 	
-	public Chatbot()
+	public Chatbot(String currentUser, String joke, String content, ArrayList<String> responseList, ArrayList<String> spookyList, String askName)
 	{
 		this.currentUser = "User";
 		this.joke = "Why did the chicken cross the road, I don't know, that's why I'm asking you.";
@@ -72,6 +72,8 @@ public class Chatbot
 		String output = "";
 		
 		output += "You said: " + userText;
+		
+		output += "Chatbot says: " + responseList;
 		
 		return output;
 	}
