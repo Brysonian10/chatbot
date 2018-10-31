@@ -138,6 +138,7 @@ public class Chatbot
 	
 	public String getContent()
 	{
+		
 		return content;
 	}
 	
@@ -257,5 +258,25 @@ public class Chatbot
 		return isSpooky;
 	}
 	
+	public boolean contentChecker(String input)
+	{
+		boolean isContent = false;
+		if(input.contains("Hello"))
+		{
+			isContent = true;
+		}
+		for(String phrase: responseList)
+		{
+			if(input.contains(phrase))
+			{
+				isContent = true;
+			}
+			if(input.contains("naughty"))
+			{
+				isContent = false;
+			}
+		}
+		return isContent;
+	}
 
 }
