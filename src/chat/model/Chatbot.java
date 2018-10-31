@@ -13,13 +13,13 @@ public class Chatbot
 	public String askName;
 	public String content;
 	
-	public Chatbot()
+	public Chatbot(String content)
 	{
-		
+		this.content = content;
 	}
 	
 	
-	public Chatbot(String currentUser, String joke, String content, ArrayList<String> responseList, ArrayList<String> spookyList, String askName)
+	public Chatbot()
 	{
 		this.currentUser = "User";
 		this.joke = "Why did the chicken cross the road, I don't know, that's why I'm asking you.";
@@ -28,12 +28,12 @@ public class Chatbot
 		this.spookyList = new ArrayList<String>();
 		this.askName = "What is your name?";
 		
-		buildTheLists();
+		buildLists();
 	}
 	
 	
 	
-	private void buildTheLists()
+	private void buildLists()
 	{
 		responseList.add("Hello! How are you today?");
 		responseList.add("Goodbye - no more talking!");
