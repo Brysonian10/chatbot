@@ -69,46 +69,29 @@ public class Chatbot
 	
 	public String processText(String userText)
 	{
-		String output = "";
+		String answer = "";
 		
-		output += "You said: " + userText;
+		if (userText == null)
+		{
+			return "Chatbot says: Well since you didn't respond I am going to self destruct, goodbye.";
 		
-		output += "Chatbot says: " + responseList;
+		}
 		
-		return output;
+		if (contentChecker(userText))
+		{
+		answer += "You said the special words. \n";
+		}
+		
+		answer += "You said: " + userText;
+		
+		
+		
+		answer += "\n Chatbot Says: ";
+		
+		
+		return answer;
 	}
 	
-
-	private void content()
-	{
-		
-		
-	}
-	
-	private void responseList()
-	{
-		
-	}
-	
-	private void currentUser()
-	{
-		
-	}
-	
-	private void joke()
-	{
-		
-	}
-	
-	private void spookyList()
-	{
-		
-	}
-	
-	public void chatBot()
-	{
-		
-	}
 	
 	//------GETTERS------
 	
@@ -138,7 +121,7 @@ public class Chatbot
 	
 	public String getContent()
 	{
-		
+	
 		return content;
 	}
 	
@@ -234,7 +217,7 @@ public class Chatbot
 		
 	}
 	
-	//this is the method for spookyChecker. Basically if what the user says has halloween in it, then its a spooky phrase or something like that.
+	//this is the method for spookyChecker. Basically if what the user says has Halloween in it, then its a spooky phrase or something like that.
 	public boolean spookyChecker(String input)
 
 	{
@@ -258,25 +241,35 @@ public class Chatbot
 		return isSpooky;
 	}
 	
-	public boolean contentChecker(String input)
+	public boolean contentChecker(String text)
 	{
-		boolean isContent = false;
-		if(input.contains("Hello"))
+		boolean hasContent = false;
+		if(text.equals(content))
 		{
-			isContent = true;
+			hasContent = true;
 		}
-		for(String phrase: responseList)
-		{
-			if(input.contains(phrase))
-			{
-				isContent = true;
-			}
-			if(input.contains("naughty"))
-			{
-				isContent = false;
-			}
-		}
-		return isContent;
+		
+		return hasContent;
 	}
+//	public boolean contentChecker(String input)
+//	{
+//		boolean isContent = false;
+//		if(input.contains("Hello"))
+//		{
+//			isContent = true;
+//		}
+//		for(String phrase: responseList)
+//		{
+//			if(input.contains(phrase))
+//			{
+//				isContent = true;
+//			}
+//			if(input.contains("naughty"))
+//			{
+//				isContent = false;
+//			}
+//		}
+//		return isContent;
+//	}
 
 }

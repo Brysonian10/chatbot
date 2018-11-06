@@ -21,31 +21,23 @@ public class ChatController
 		
 	public void start()
 	{
-		//method calls
-		interactWithChatBot("");
+		String userInput = "";
 		
-		//exit loop
-		String keepChatting =JOptionPane.showInputDialog(null, "Do you wat to continue chattiing?");
-		if (keepChatting.equals("yes")) 
-		{
-			interactWithChatBot("");
-		}else if (keepChatting.equals("no"))
-		{
-			String userInput = " ";
-			while(!userInput.equalsIgnoreCase("quit")) 
+		while (!userInput.equals("quit"))
 			{
-				userInput = JOptionPane.showInputDialog(null, "type 'quit' to exit ");
+				userInput = interactWithChatbot(userInput);
 			}
-			
-		}
+
 		
 	}
 	
-	public void interactWithChatBot(String chatBotSays)
+	public String interactWithChatbot(String chatBotSays)
 		{
 			String currentUser = JOptionPane.showInputDialog(null, "Hi! What's your name?");
 			simpleBot.setCurrentUser(currentUser);
 			JOptionPane.showMessageDialog(null, simpleBot.processText(currentUser));
+			
+			return currentUser;
 		}
 		
 	
