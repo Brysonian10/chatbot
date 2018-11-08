@@ -70,6 +70,9 @@ public class Chatbot
 	public String processText(String userText)
 	{
 		String answer = "";
+		int randomIndex = (int)(Math.random()*responseList.size());
+		answer += "You said: " + userText;
+			answer += "\n Chatbot Says: " + responseList.get(randomIndex);
 		
 		if (userText == null)
 		{
@@ -82,15 +85,14 @@ public class Chatbot
 		answer += "You said the special words. \n";
 		}
 		
-		answer += "You said: " + userText;
-		
-		
-		
-		answer += "\n Chatbot Says: ";
-		
 		
 		return answer;
 	}
+	
+	
+	
+	
+	
 	
 	
 	//------GETTERS------
