@@ -72,7 +72,7 @@ public class Chatbot
 		String answer = "";
 		int randomIndex = (int)(Math.random()*responseList.size());
 		answer += "You said: " + userText;
-			answer += "\n Chatbot Says: " + responseList.get(randomIndex);
+		answer += "\n Chatbot Says: " + responseList.get(randomIndex);
 		
 		if (userText == null)
 		{
@@ -249,29 +249,18 @@ public class Chatbot
 		if(text.equals(content))
 		{
 			hasContent = true;
+		}else if (text.contains(" " + content))
+		{
+			hasContent = true;
+		}else if(text.contains(content + " "))
+		{
+			hasContent = true;
+		}else if(text.contains(" " + content + " "))
+		{
+			hasContent = true;
 		}
 		
 		return hasContent;
 	}
-//	public boolean contentChecker(String input)
-//	{
-//		boolean isContent = false;
-//		if(input.contains("Hello"))
-//		{
-//			isContent = true;
-//		}
-//		for(String phrase: responseList)
-//		{
-//			if(input.contains(phrase))
-//			{
-//				isContent = true;
-//			}
-//			if(input.contains("naughty"))
-//			{
-//				isContent = false;
-//			}
-//		}
-//		return isContent;
-//	}
 
 }
