@@ -2,6 +2,8 @@ package chat.controller;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import chat.model.Chatbot;
+import chat.view.ChatFrame;
+import chat.view.ChatPanel;
 
 public class ChatController
 {
@@ -12,6 +14,8 @@ public class ChatController
 	private String userCurrent;
 	private ArrayList<String> firstList = new ArrayList<String>();
 	private ArrayList<String> firstSpooky = new ArrayList<String>();
+	private ChatPanel appPanel;
+	private ChatFrame appFrame;
 	
 	
 	public ChatController()
@@ -59,5 +63,7 @@ public class ChatController
 	{
 		return simpleBot;
 	}
+	
+	
 			
 }
