@@ -190,7 +190,7 @@ public class Chatbot
 	
 	public Chatbot(String userJoke, String userContent, String userCurrent, ArrayList<String> firstList, ArrayList<String> firstSpooky)
 	{
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	public boolean legitimacyChecker(String input)
