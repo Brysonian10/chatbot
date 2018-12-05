@@ -25,15 +25,7 @@ public class ChatPanel extends JPanel
 		this.appController = appController;
 		appLayout = new SpringLayout();
 		
-		savingButton = new JButton("Why");
-		loadingButton = new JButton("Starting loading when ever you need to");
-		chatButton = new JButton("Chat with the robot here");
-		checkerButton = new JButton("Check Text just in case you need to make sure there is nothing bad.");
 		
-		chatField = new JTextField("Talk to the bot here if you need to explain stuff.", 50);
-		chatArea = new JTextArea("Chat Area", 20, 50);
-		
-		chatPane = new JScrollPane();
 		
 //		this.appController = appController;
 //		appLayout = new SpringLayout();
@@ -96,7 +88,37 @@ public class ChatPanel extends JPanel
 	
 	private void setupLayout()
 	{
+		savingButton = new JButton("Save");
+		appLayout.putConstraint(SpringLayout.WEST, savingButton, 405, SpringLayout.WEST, this);
+		appLayout.putConstraint(SpringLayout.SOUTH, savingButton, -71, SpringLayout.SOUTH, this);
+		loadingButton = new JButton("Load");
+		appLayout.putConstraint(SpringLayout.SOUTH, loadingButton, -71, SpringLayout.SOUTH, this);
+		appLayout.putConstraint(SpringLayout.EAST, loadingButton, -15, SpringLayout.WEST, savingButton);
+		chatButton = new JButton("Chat");
+		appLayout.putConstraint(SpringLayout.NORTH, loadingButton, 0, SpringLayout.NORTH, chatButton);
+		appLayout.putConstraint(SpringLayout.WEST, loadingButton, 15, SpringLayout.EAST, chatButton);
+		appLayout.putConstraint(SpringLayout.EAST, chatButton, 210, SpringLayout.WEST, this);
+		appLayout.putConstraint(SpringLayout.WEST, chatButton, 50, SpringLayout.WEST, this);
+		checkerButton = new JButton("Check Text");
+		appLayout.putConstraint(SpringLayout.SOUTH, checkerButton, -71, SpringLayout.SOUTH, this);
+		appLayout.putConstraint(SpringLayout.EAST, savingButton, -19, SpringLayout.WEST, checkerButton);
+		appLayout.putConstraint(SpringLayout.WEST, checkerButton, 584, SpringLayout.WEST, this);
+		appLayout.putConstraint(SpringLayout.EAST, checkerButton, -50, SpringLayout.EAST, this);
 		
+		chatField = new JTextField("Talk to the bot here", 50);
+		appLayout.putConstraint(SpringLayout.NORTH, checkerButton, 25, SpringLayout.SOUTH, chatField);
+		appLayout.putConstraint(SpringLayout.NORTH, savingButton, 25, SpringLayout.SOUTH, chatField);
+		appLayout.putConstraint(SpringLayout.NORTH, chatButton, 25, SpringLayout.SOUTH, chatField);
+		appLayout.putConstraint(SpringLayout.SOUTH, chatButton, 99, SpringLayout.SOUTH, chatField);
+		chatArea = new JTextArea("Chat Area", 20, 50);
+		
+		chatPane = new JScrollPane();
+		appLayout.putConstraint(SpringLayout.NORTH, chatField, 30, SpringLayout.SOUTH, chatPane);
+		appLayout.putConstraint(SpringLayout.WEST, chatField, 0, SpringLayout.WEST, chatPane);
+		appLayout.putConstraint(SpringLayout.EAST, chatField, 0, SpringLayout.EAST, chatPane);
+		appLayout.putConstraint(SpringLayout.NORTH, chatPane, 50, SpringLayout.NORTH, this);
+		appLayout.putConstraint(SpringLayout.WEST, chatPane, 50, SpringLayout.WEST, this);
+		appLayout.putConstraint(SpringLayout.EAST, chatPane, -50, SpringLayout.EAST, this);
 	}
 	
 }
