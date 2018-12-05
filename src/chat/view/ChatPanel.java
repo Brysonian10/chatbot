@@ -81,7 +81,12 @@ public class ChatPanel extends JPanel
 		{
 			public void actionPerformed(ActionEvent click)
 			{
-				//Do Something...
+				String userText = chatField.getText();
+				String response = "";
+				response = appController.interactWithChatbot(userText);
+				chatArea.append(response);
+				chatArea.setCaretPosition(chatArea.getDocument().getLength());
+				chatField.setText("");
 			}
 		});
 	}

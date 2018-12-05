@@ -70,26 +70,40 @@ public class Chatbot
 	public String processText(String userText)
 	{
 		String answer = "";
-		int randomIndex = (int)(Math.random()*responseList.size());
-		answer += "You said: " + userText;
-		answer += "\n Chatbot Says: " + responseList.get(randomIndex);
 		
-		if (userText == null)
+		if(!validityChecker(userText))
 		{
-			return "Chatbot says: Well since you didn't respond I am going to self destruct, goodbye.";
-		
+			answer += "You really should not send null\n";
 		}
-		
-		if (contentChecker(userText))
+		else
 		{
-		answer += "You said the special words. \n";
+			answer += "You said: " + userText + "\n";
+			
+			if (contentChecker(userText))
+			{
+				answer += "You said the special words. \n";
+			}
+			int randomIndex = (int)(Math.random()*responseList.size());
+		answer += "\n Chatbot Says: " + responseList.get(randomIndex) + "\n";
 		}
-		
-		
+
 		return answer;
 	}
 	
 	
+	public boolean validityChecker(String text)
+	{
+		boolean isValid = false;
+		
+		if(text != null && text.length() > 3)
+		{
+			isValid = true;
+		}
+		
+		
+		
+		return isValid;
+	}
 	
 	
 	

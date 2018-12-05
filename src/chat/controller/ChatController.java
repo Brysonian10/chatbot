@@ -32,13 +32,11 @@ public class ChatController
 		
 	}
 	
-	public String interactWithChatbot(String chatBotSays)
+	public String interactWithChatbot(String text)
 		{
-			String currentUser = JOptionPane.showInputDialog(null, "Hi! What's your name?");
-			simpleBot.setCurrentUser(currentUser);
-			JOptionPane.showMessageDialog(null, simpleBot.processText(currentUser));
-			
-			return currentUser;
+			String output = "";
+			output += simpleBot.processText(text);
+			return output;
 		}
 		
 	
@@ -48,10 +46,22 @@ public class ChatController
 		
 	}
 	
-	public String useChatbotCheckers(String spooky)
+	public String useChatbotCheckers(String text)
 	{
-		
-		return spooky;
+		String testedValues = "The following checkers passed: ";
+		if(simpleBot.contentChecker(text))
+		{
+			testedValues += "\nContent Checker";
+		}
+		if (simpleBot.spookyChecker(text))
+		{
+			testedValues += "\nSpooky Checker";
+		}
+		if (simpleBot.validityChecker(text))
+		{
+			testedValues += "\nValidity Checker";
+		}
+		return testedValues;
 			
 	}
 	
