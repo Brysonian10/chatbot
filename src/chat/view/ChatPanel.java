@@ -79,7 +79,7 @@ public class ChatPanel extends JPanel
 	{
 		chatButton.addActionListener(new ActionListener()
 		{
-			public void actionPerformed(ActionEvent mouseClick)
+			public void actionPerformed(ActionEvent click)
 			{
 				//Do Something...
 			}

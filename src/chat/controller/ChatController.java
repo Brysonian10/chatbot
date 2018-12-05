@@ -21,17 +21,14 @@ public class ChatController
 	public ChatController()
 	{
 		simpleBot = new Chatbot(userJoke, userContent, userCurrent, firstList, firstSpooky);
+		appFrame = new ChatFrame(this);
+
 	}
 		
 	public void start()
 	{
-		String userInput = "";
+	
 		
-		while (!userInput.equals("quit"))
-			{
-				userInput = interactWithChatbot(userInput);
-			}
-
 		
 	}
 	
