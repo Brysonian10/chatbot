@@ -71,6 +71,16 @@ public class ChatController
 		return simpleBot;
 	}
 	
+	public void handleErrors(Exception error)
+	{
+		JOptionPane.showMessageDialog(appFrame,  error.getMessage());
+	}
+	
+	private void close()
+	{
+		System.exit(0);
+	}
+	
 	
 			
 }

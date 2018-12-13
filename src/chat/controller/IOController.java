@@ -15,6 +15,7 @@ public class IOController
 			String filename = path;
 			Calendar date = Calendar.getInstance();
 			filename += "/" + date.get(Calendar.MONTH) + " " + date.get(Calendar.DAY_OF_MONTH);
+			filename += " at " + date.get(Calendar.HOUR) + "-" + date.get(Calendar.MINUTE); 
 			filename += " chatbot save.txt";
 			
 			File saveFile = new File(filename);
@@ -25,7 +26,7 @@ public class IOController
 				String currentLine = textScanner.nextLine();
 				saveText.println(currentLine);
 			}
-			
+			//these close the file after writing in them
 			textScanner.close();
 			saveText.close();
 		}
@@ -37,5 +38,36 @@ public class IOController
 		{
 			app.handleErrors(genericError);
 		}
+		
+	}
+	
+	public static String loadFile(ChatController app, String path)
+	{
+		String contents = "";
+		
+		try
+		{
+			File saveFile = new File(path);
+			Scanner fileScanner;
+			if(saveFile.exists())
+			{
+				fileScanner = new Scanner(saveFile);
+				while(fileScanner.hasNext())
+				{
+					contents += fileScanner.nextLine() + "\n";
+				}
+				fileScanner.close();
+			}
+		}
+		catch(IOException error)
+		{
+			app.handleErrors(error);
+		}
+		catch(Exception genericError)
+		{
+			app.handleErrors(genericError);
+		}
+		
+		return contents;
 	}
 }

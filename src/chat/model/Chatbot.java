@@ -95,7 +95,7 @@ public class Chatbot
 	{
 		boolean isValid = false;
 		
-		if(text != null && text.length() > 3)
+		if(text != null && text.length() > 1)
 		{
 			isValid = true;
 		}
