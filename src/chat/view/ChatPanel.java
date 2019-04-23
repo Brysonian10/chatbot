@@ -20,6 +20,8 @@ public class ChatPanel extends JPanel
 	private JScrollPane chatPane;
 	private JButton resetButton;
 	
+	
+	
 	public ChatPanel(ChatController appController)
 	{
 		super();
@@ -156,10 +158,12 @@ public class ChatPanel extends JPanel
 		appLayout.putConstraint(SpringLayout.SOUTH, savingButton, -71, SpringLayout.SOUTH, this);
 		
 		loadingButton = new JButton("Load");
+		loadingButton.setIcon(new ImageIcon(ChatPanel.class.getResource("/chat/resources/load.png")));
 		appLayout.putConstraint(SpringLayout.SOUTH, loadingButton, -71, SpringLayout.SOUTH, this);
 		appLayout.putConstraint(SpringLayout.EAST, loadingButton, -15, SpringLayout.WEST, savingButton);
 		
 		chatButton = new JButton("Chat");
+		chatButton.setIcon(new ImageIcon(ChatPanel.class.getResource("/chat/resources/chat.png")));
 		appLayout.putConstraint(SpringLayout.NORTH, loadingButton, 0, SpringLayout.NORTH, chatButton);
 		appLayout.putConstraint(SpringLayout.WEST, loadingButton, 15, SpringLayout.EAST, chatButton);
 		appLayout.putConstraint(SpringLayout.EAST, chatButton, 210, SpringLayout.WEST, this);
