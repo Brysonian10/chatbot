@@ -154,6 +154,7 @@ public class ChatPanel extends JPanel
 	private void setupLayout()
 	{
 		savingButton = new JButton("Save");
+		savingButton.setIcon(new ImageIcon(ChatPanel.class.getResource("/chat/resources/save.png")));
 		appLayout.putConstraint(SpringLayout.WEST, savingButton, 405, SpringLayout.WEST, this);
 		appLayout.putConstraint(SpringLayout.SOUTH, savingButton, -71, SpringLayout.SOUTH, this);
 		
