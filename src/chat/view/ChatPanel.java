@@ -19,6 +19,7 @@ public class ChatPanel extends JPanel
 	private JTextArea chatArea;
 	private JScrollPane chatPane;
 	private JButton resetButton;
+	private JButton tweetButton;
 	
 	
 	
@@ -60,6 +61,7 @@ public class ChatPanel extends JPanel
 		this.add(savingButton);
 		this.add(loadingButton);
 		this.add(checkerButton);
+		this.add(tweetButton);
 		this.add(chatField);
 		
 	}
@@ -109,7 +111,9 @@ public class ChatPanel extends JPanel
 				{
 					public void actionPerformed(ActionEvent click)
 					{
-						
+						String path = getPath("load");
+						String chatText = IOController.loadFile(appController, path);
+						chatArea.setText(chatText);
 					}
 				});
 		
@@ -121,6 +125,16 @@ public class ChatPanel extends JPanel
 					}
 				
 				});
+		
+		tweetButton.addActionListener(new ActionListener()  
+		{
+			public void actionPerformed(ActionEvent tweetClick)
+			{
+				String textToTweet = chatField.getText().trim();
+				appController.tweet(textToTweet);
+			}
+		
+		});
 		
 	}
 	
@@ -153,6 +167,13 @@ public class ChatPanel extends JPanel
 	
 	private void setupLayout()
 	{
+		
+		tweetButton = new JButton("Tweet!");
+		appLayout.putConstraint(SpringLayout.WEST, tweetButton, 353, SpringLayout.WEST, this);
+		appLayout.putConstraint(SpringLayout.SOUTH, tweetButton, -10, SpringLayout.SOUTH, this);
+		
+		
+		
 		savingButton = new JButton("Save");
 		savingButton.setIcon(new ImageIcon(ChatPanel.class.getResource("/chat/resources/save.png")));
 		appLayout.putConstraint(SpringLayout.WEST, savingButton, 405, SpringLayout.WEST, this);

@@ -4,6 +4,8 @@ import javax.swing.JOptionPane;
 import chat.model.Chatbot;
 import chat.view.ChatFrame;
 import chat.view.ChatPanel;
+import chat.model.ChatTwitter;
+import javax.swing.ImageIcon;
 
 public class ChatController
 {
@@ -17,10 +19,13 @@ public class ChatController
 	private ChatPanel appPanel;
 	private ChatFrame appFrame;
 	
+	private ChatTwitter myTwitter;
+	
 	
 	public ChatController()
 	{
-		simpleBot = new Chatbot(userJoke, userContent, userCurrent, firstList, firstSpooky);
+		simpleBot = new Chatbot();
+		myTwitter = new ChatTwitter(this);
 		appFrame = new ChatFrame(this);
 
 	}
@@ -79,6 +84,11 @@ public class ChatController
 	private void close()
 	{
 		System.exit(0);
+	}
+	
+	public void tweet(String text)
+	{
+		myTwitter.sendTweet(text);
 	}
 	
 	
