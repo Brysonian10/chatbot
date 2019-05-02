@@ -20,6 +20,7 @@ public class ChatPanel extends JPanel
 	private JScrollPane chatPane;
 	private JButton resetButton;
 	private JButton tweetButton;
+	private JButton searchTwitterButton;
 	
 	
 	
@@ -63,6 +64,7 @@ public class ChatPanel extends JPanel
 		this.add(checkerButton);
 		this.add(tweetButton);
 		this.add(chatField);
+		this.add(searchTwitterButton);
 		
 	}
 	
@@ -132,6 +134,17 @@ public class ChatPanel extends JPanel
 			{
 				String textToTweet = chatField.getText().trim();
 				appController.tweet(textToTweet);
+			}
+		
+		});
+		
+		searchTwitterButton.addActionListener(new ActionListener()  
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				String username = chatField.getText().trim();
+				String display = appController.findWords(username);
+				chatArea.append("\n\n" + display);
 			}
 		
 		});
@@ -211,6 +224,8 @@ public class ChatPanel extends JPanel
 		appLayout.putConstraint(SpringLayout.NORTH, chatPane, 50, SpringLayout.NORTH, this);
 		appLayout.putConstraint(SpringLayout.WEST, chatPane, 50, SpringLayout.WEST, this);
 		appLayout.putConstraint(SpringLayout.EAST, chatPane, -50, SpringLayout.EAST, this);
+		
+		searchTwitterButton = new JButton();
 	}
 	
 }
